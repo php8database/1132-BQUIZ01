@@ -1,7 +1,7 @@
 <?php
 
 class DB{
-    protected $dsn="mysql:host=localhost;charset=utf8;dbname=db07";
+    protected $dsn="mysql:host=localhost;charset=utf8;dbname=db10";
     protected $pdo;
     protected $table;
 
@@ -145,7 +145,7 @@ class DB{
 }
 
 function q($sql){
-    $pdo=new PDO("mysql:host=localhost;charset=utf8;dbname=db07",'root','');
+    $pdo=new PDO("mysql:host=localhost;charset=utf8;dbname=db10",'root','');
     return $pdo->query($sql)->fetchAll();
 }
 
@@ -161,3 +161,4 @@ function to($url){
 
 
 $Title=new DB('titles');
+$Ad=new DB('ads');

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-12-10 01:33:26
+-- 產生時間： 2024-12-16 05:33:20
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -63,6 +63,24 @@ INSERT INTO `ads` (`id`, `img`, `text`, `sh`) VALUES
 (3, '', '轉知2012年全國青年水墨創作大賽活動', 1),
 (4, '', '欣榮圖書館101年悅讀達人徵文比賽，歡迎全校師生踴躍投稿參加', 1),
 (6, '', '轉知:教育是人類升沉的樞紐-2013教師生命成長營', 1);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `bottom`
+--
+
+CREATE TABLE `bottom` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `bottom` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `bottom`
+--
+
+INSERT INTO `bottom` (`id`, `bottom`) VALUES
+(1, '2024 頁尾版權');
 
 -- --------------------------------------------------------
 
@@ -171,8 +189,26 @@ CREATE TABLE `titles` (
 INSERT INTO `titles` (`id`, `img`, `text`, `sh`) VALUES
 (1, '01B01.jpg', '卓越科技大學校園資訊系統', 0),
 (2, '01B02.jpg', '卓越科技大學校園資訊系統', 0),
-(3, '01B03.jpg', '卓越科技大學校園資訊系統', 0),
+(3, '01B03.jpg', '卓越科技大學校園資訊系統', 1),
 (4, '01B04.jpg', '卓越科技大學校園資訊系統', 0);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `total`
+--
+
+CREATE TABLE `total` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `total` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `total`
+--
+
+INSERT INTO `total` (`id`, `total`) VALUES
+(1, 500);
 
 --
 -- 已傾印資料表的索引
@@ -188,6 +224,12 @@ ALTER TABLE `admin`
 -- 資料表索引 `ads`
 --
 ALTER TABLE `ads`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `bottom`
+--
+ALTER TABLE `bottom`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -221,6 +263,12 @@ ALTER TABLE `titles`
   ADD PRIMARY KEY (`id`);
 
 --
+-- 資料表索引 `total`
+--
+ALTER TABLE `total`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
 
@@ -235,6 +283,12 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `ads`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `bottom`
+--
+ALTER TABLE `bottom`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `images`
@@ -264,7 +318,13 @@ ALTER TABLE `news`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `titles`
 --
 ALTER TABLE `titles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `total`
+--
+ALTER TABLE `total`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

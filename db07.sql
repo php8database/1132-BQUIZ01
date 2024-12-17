@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-12-16 05:33:20
+-- 產生時間： 2024-12-17 11:15:33
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -120,8 +120,9 @@ CREATE TABLE `menus` (
 --
 
 INSERT INTO `menus` (`id`, `href`, `text`, `sh`, `main_id`) VALUES
-(1, 'http://localhost/admin.php?do=login', '管理登入', 1, 0),
-(2, 'http://localhost/index.php', '網站首頁', 1, 0);
+(1, '?do=login', '管理登入', 1, 0),
+(2, 'index.php', '網站首頁', 1, 0),
+(4, '?do=news', '更多最新消息資料區', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -300,7 +301,7 @@ ALTER TABLE `images`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `mvims`

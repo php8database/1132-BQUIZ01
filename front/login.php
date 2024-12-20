@@ -1,6 +1,14 @@
 <?php 
+
+if(isset($_SESSION['login'])){
+	to("admin.php");
+	exit();	
+}
+
 if(isset($_POST['acc'])){
-	if($_POST['acc']=='admin' && $_POST['ps']=='1234'){
+	$row=$Admin->find(['acc'=>$_POST['acc'],'pw'=>$_POST['ps']]);
+
+	if(!empty($row)){
 		$_SESSION['login']=1;
 		to("admin.php");
 	}else{
@@ -16,7 +24,7 @@ if(isset($_POST['acc'])){
 	</marquee>
 	<div style="height:32px; display:block;"></div>
 	<!--正中央-->
-	<form method="post" action="?do=login" target="back">
+	<form method="post" action="?do=login" >
 		<p class="t botli">管理員登入區</p>
 		<p class="cent">帳號 ： <input name="acc" autofocus="" type="text"></p>
 		<p class="cent">密碼 ： <input name="ps" type="password"></p>
